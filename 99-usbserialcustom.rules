@@ -1,0 +1,5 @@
+# if sudo usermod -aG dialout $USER doesn't work
+# copy this file to: sudo cp -n 99-usbserialcustom.rules /etc/udev/rules.d/
+# alternatively you can use sudo chmod a+g /dev/ttyACM0 or ttyUSB0
+KERNEL=="ttyUSB[0-9]", MODE="0666"
+KERNEL=="ttyACM[0-9]", MODE="0666"
